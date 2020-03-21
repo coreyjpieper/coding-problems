@@ -37,21 +37,21 @@ import math
 def rearrange(elements: List[int]) -> List:
     dict = {}  # key: number of 1's in binary representation, value: list of numbers with that many number of 1's
     for e in elements:
-        numOnes = bin(e).count("1")
-        if numOnes not in dict:
-            dict[numOnes] = [e]
+        num_of_ones = bin(e).count("1")
+        if num_of_ones not in dict:
+            dict[num_of_ones] = [e]
         else:
-            dict[numOnes].append(e)
+            dict[num_of_ones].append(e)
 
-    sortedList = []
+    sorted_list = []
 
     ls = list(dict.keys())
     ls.sort()
     print("List sorted: ", ls)
     for key in ls:
-        sortedList.extend(sorted(dict[key]))
+        sorted_list.extend(sorted(dict[key]))
 
-    return sortedList
+    return sorted_list
 
 
 print(rearrange([7, 8, 6, 5]))  # 8, 5, 6, 7
